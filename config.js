@@ -7,7 +7,7 @@ class KafkaConfig {
       brokers: ["localhost:9093"],
     });
     this.producer = this.kafka.producer();
-    this.consumer = this.kafka.consumer({ groupId: "test-group" });
+    //this.consumer = this.kafka.consumer({ groupId: "test-group" });
   }
 
   async produce(topic, messages) {
@@ -24,7 +24,7 @@ class KafkaConfig {
     }
   }
 
-  async consume(topic, callback) {
+  /*async consume(topic, callback) {
     try {
       await this.consumer.connect();
       await this.consumer.subscribe({ topic: topic, fromBeginning: true });
@@ -37,7 +37,7 @@ class KafkaConfig {
     } catch (error) {
       console.error(error);
     }
-  }
+  }*/
 }
 
 export default KafkaConfig;
